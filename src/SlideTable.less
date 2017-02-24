@@ -1,0 +1,76 @@
+.slider-table {
+    width: 100%;
+    overflow: hidden;
+    padding: 0 18px 30px;
+    box-sizing: border-box;
+    .table-title {
+        font-size: 14px;
+        color: #303030;
+        border-bottom: 1px solid #bebebe;
+        padding: 10px 0;
+    }
+    .slider-table-main {
+        display: flex;
+        flex-wrap: nowrap;
+        .header-container {
+            width: 36%;
+            .table-header:first-child {
+                color: #888888;
+                padding: 5px 0;
+            }
+        }
+        .slider-container {
+            width: 64%;
+            position: relative;
+            .table-slider {
+                display: flex;
+                flex-wrap: nowrap;
+                flex-direction: row;
+                .column-container {
+                    display: flex;
+                    flex: auto;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    .row-text {
+                        text-align: right;
+                    }
+                    .row-text:first-child {
+                        color: #888888;
+                        padding: 5px 0;
+                    }
+                }
+            }
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            li {
+                color: #303030;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size: 12px;
+                line-height: 22px;
+            }
+        }
+    }
+    .swiper-container {
+        margin: 0 !important;
+    }
+    .swiper-button-disabled {
+        display: none;
+    }
+    .swiper-button-next {
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23bebebe'%2F%3E%3C%2Fsvg%3E");
+        right: -24px;
+        top: 14px;
+        background-size: 7px;
+    }
+    .swiper-button-prev {
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23bebebe'%2F%3E%3C%2Fsvg%3E");
+        left: -24px;
+        top: 14px;
+        background-size: 7px;
+    }
+}
