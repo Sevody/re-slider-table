@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import Swiper from 'swiper';
-import './SlideTable.less';
+import './SliderTable.less';
 import '../node_modules/swiper/dist/css/swiper.css';
 
 class SwiperWrapper extends Component {

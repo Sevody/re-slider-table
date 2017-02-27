@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["re-slideTable"] = factory();
+		exports["re-slider-table"] = factory();
 	else
-		root["re-slideTable"] = factory();
+		root["re-slider-table"] = factory();
 })(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -60,13 +60,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-	var _SlideTable = __webpack_require__(1);
+	var _SliderTable = __webpack_require__(1);
 
-	var _SlideTable2 = _interopRequireDefault(_SlideTable);
+	var _SliderTable2 = _interopRequireDefault(_SliderTable);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	exports.default = _SlideTable2.default;
+	exports.default = _SliderTable2.default;
 
 /***/ },
 /* 1 */
@@ -96,19 +96,19 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var SlideTable = function (_Component) {
-	    _inherits(SlideTable, _Component);
+	var SliderTable = function (_Component) {
+	    _inherits(SliderTable, _Component);
 
-	    function SlideTable(props) {
-	        _classCallCheck(this, SlideTable);
+	    function SliderTable(props) {
+	        _classCallCheck(this, SliderTable);
 
-	        var _this = _possibleConstructorReturn(this, (SlideTable.__proto__ || Object.getPrototypeOf(SlideTable)).call(this, props));
+	        var _this = _possibleConstructorReturn(this, (SliderTable.__proto__ || Object.getPrototypeOf(SliderTable)).call(this, props));
 
 	        _this.name = (Math.random() * 100000000).toString().substr(0, 5);
 	        return _this;
 	    }
 
-	    _createClass(SlideTable, [{
+	    _createClass(SliderTable, [{
 	        key: 'render',
 	        value: function render() {
 	            var _props = this.props,
@@ -194,28 +194,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	    }]);
 
-	    return SlideTable;
+	    return SliderTable;
 	}(_react.Component);
 
-	SlideTable.defaultProps = {
-	    baseClassName: 'slide-table', // 组件类名
+	SliderTable.defaultProps = {
+	    baseClassName: 'slider-table', // 组件类名
 	    defaultValue: '--', // 表格数据为空时，默认显示的内容
 	    columnNum: 2, // 每个一个滑片的列数
 	    headerWidth: '36%', // 表头的宽度
 	    slideable: false };
 
-	SlideTable.propTypes = {
+	SliderTable.propTypes = {
 	    title: _react.PropTypes.string.isRequired, // 表格标题
-	    header: _react.PropTypes.arrayOf(_react.PropTypes.string).isRequired, // 表格标题
-	    data: _react.PropTypes.arrayOf(_react.PropTypes.oneOf([_react.PropTypes.string, _react.PropTypes.number])).isRequired, // 表格数据
+	    header: _react.PropTypes.arrayOf(_react.PropTypes.shape({
+	        key: _react.PropTypes.string,
+	        value: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.number])
+	    })).isRequired, // 表格标题
+	    data: _react.PropTypes.arrayOf(_react.PropTypes.object).isRequired, // 表格数据
 	    baseClassName: _react.PropTypes.string,
-	    defaultValue: _react.PropTypes.oneOf([_react.PropTypes.string, _react.PropTypes.number]),
+	    defaultValue: _react.PropTypes.oneOfType([_react2.default.PropTypes.string, _react.PropTypes.number]),
 	    columnNum: _react.PropTypes.number,
 	    headerWidth: _react.PropTypes.string,
 	    slideable: _react.PropTypes.bool
 	};
 
-	exports.default = SlideTable;
+	exports.default = SliderTable;
 
 /***/ },
 /* 2 */
@@ -25357,8 +25360,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/postcss-loader/index.js!../node_modules/less-loader/index.js!./SlideTable.less", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/postcss-loader/index.js!../node_modules/less-loader/index.js!./SlideTable.less");
+			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/postcss-loader/index.js!../node_modules/less-loader/index.js!./SliderTable.less", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/postcss-loader/index.js!../node_modules/less-loader/index.js!./SliderTable.less");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -25376,7 +25379,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 	// module
-	exports.push([module.id, ".slide-table {\n  width: 100%;\n  overflow: hidden;\n  padding: 0 18px 30px;\n  box-sizing: border-box;\n}\n.slide-table .table-title {\n  font-size: 14px;\n  color: #303030;\n  border-bottom: 1px solid #bebebe;\n  padding: 10px 0;\n}\n.slide-table .slide-table-main {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-flex-wrap: nowrap;\n      -ms-flex-wrap: nowrap;\n          flex-wrap: nowrap;\n}\n.slide-table .slide-table-main .header-container {\n  width: 36%;\n}\n.slide-table .slide-table-main .header-container .table-header:first-child {\n  color: #888888;\n  padding: 5px 0;\n}\n.slide-table .slide-table-main .slider-container {\n  width: 64%;\n  position: relative;\n}\n.slide-table .slide-table-main .slider-container .table-slider {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-flex-wrap: nowrap;\n      -ms-flex-wrap: nowrap;\n          flex-wrap: nowrap;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n      -ms-flex-direction: row;\n          flex-direction: row;\n}\n.slide-table .slide-table-main .slider-container .table-slider .column-container {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n  -webkit-flex: auto;\n      -ms-flex: auto;\n          flex: auto;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: end;\n  -webkit-justify-content: flex-end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n.slide-table .slide-table-main .slider-container .table-slider .column-container .row-text {\n  text-align: right;\n}\n.slide-table .slide-table-main .slider-container .table-slider .column-container .row-text:first-child {\n  color: #888888;\n  padding: 5px 0;\n}\n.slide-table .slide-table-main ul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n.slide-table .slide-table-main ul li {\n  color: #303030;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  font-size: 12px;\n  line-height: 22px;\n}\n.slide-table .swiper-container {\n  margin: 0 !important;\n}\n.slide-table .swiper-button-disabled {\n  display: none;\n}\n.slide-table .swiper-button-next {\n  background-image: url(\"data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23bebebe'%2F%3E%3C%2Fsvg%3E\");\n  right: -24px;\n  top: 14px;\n  background-size: 7px;\n}\n.slide-table .swiper-button-prev {\n  background-image: url(\"data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23bebebe'%2F%3E%3C%2Fsvg%3E\");\n  left: -24px;\n  top: 14px;\n  background-size: 7px;\n}\n", ""]);
+	exports.push([module.id, ".slider-table {\n  width: 100%;\n  overflow: hidden;\n  padding: 0 18px 30px;\n  box-sizing: border-box;\n}\n.slider-table .table-title {\n  font-size: 14px;\n  color: #303030;\n  border-bottom: 1px solid #bebebe;\n  padding: 10px 0;\n}\n.slider-table .slider-table-main {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-flex-wrap: nowrap;\n      -ms-flex-wrap: nowrap;\n          flex-wrap: nowrap;\n}\n.slider-table .slider-table-main .header-container {\n  width: 36%;\n}\n.slider-table .slider-table-main .header-container .table-header:first-child {\n  color: #888888;\n  padding: 5px 0;\n}\n.slider-table .slider-table-main .slider-container {\n  width: 64%;\n  position: relative;\n}\n.slider-table .slider-table-main .slider-container .table-slider {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-flex-wrap: nowrap;\n      -ms-flex-wrap: nowrap;\n          flex-wrap: nowrap;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n      -ms-flex-direction: row;\n          flex-direction: row;\n}\n.slider-table .slider-table-main .slider-container .table-slider .column-container {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n  -webkit-flex: auto;\n      -ms-flex: auto;\n          flex: auto;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: end;\n  -webkit-justify-content: flex-end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n.slider-table .slider-table-main .slider-container .table-slider .column-container .row-text {\n  text-align: right;\n}\n.slider-table .slider-table-main .slider-container .table-slider .column-container .row-text:first-child {\n  color: #888888;\n  padding: 5px 0;\n}\n.slider-table .slider-table-main ul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n.slider-table .slider-table-main ul li {\n  color: #303030;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  font-size: 12px;\n  line-height: 22px;\n}\n.slider-table .swiper-container {\n  margin: 0 !important;\n}\n.slider-table .swiper-button-disabled {\n  display: none;\n}\n.slider-table .swiper-button-next {\n  background-image: url(\"data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23bebebe'%2F%3E%3C%2Fsvg%3E\");\n  right: -24px;\n  top: 14px;\n  background-size: 7px;\n}\n.slider-table .swiper-button-prev {\n  background-image: url(\"data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23bebebe'%2F%3E%3C%2Fsvg%3E\");\n  left: -24px;\n  top: 14px;\n  background-size: 7px;\n}\n", ""]);
 
 	// exports
 
