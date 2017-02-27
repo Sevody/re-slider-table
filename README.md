@@ -1,6 +1,6 @@
 # re-slider-table
 
-a slideable table component base on swiper(https://github.com/nolimits4web/Swiper)
+a slideable table component base on [swiper](https://github.com/nolimits4web/Swiper)
 
 ## Install
 
