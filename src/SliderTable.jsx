@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import SwiperWrapper from './SwiperWrapper';
 
-class SlideTable extends Component {
+class SliderTable extends Component {
     constructor(props) {
         super(props);
         this.name = (Math.random() * 100000000).toString().substr(0, 5);
@@ -57,7 +57,7 @@ class SlideTable extends Component {
     }
 }
 
-SlideTable.defaultProps = {
+SliderTable.defaultProps = {
     baseClassName: 'slider-table', // 组件类名
     defaultValue: '--', // 表格数据为空时，默认显示的内容
     columnNum: 2,   // 每个一个滑片的列数
@@ -65,7 +65,7 @@ SlideTable.defaultProps = {
     slideable: false,   // 是否支持滑动
 };
 
-SlideTable.propTypes = {
+SliderTable.propTypes = {
     title: PropTypes.string.isRequired, // 表格标题
     header: PropTypes.arrayOf(
         PropTypes.shape({
@@ -84,4 +84,4 @@ SlideTable.propTypes = {
     slideable: PropTypes.bool,
 };
 
-export default SlideTable;
+export default SliderTable;

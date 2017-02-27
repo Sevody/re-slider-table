@@ -1,3 +1,3 @@
-import SlideTable from './src/SlideTable';
+import SliderTable from './src/SliderTable';
 
-export default SlideTable;
+export default SliderTable;
